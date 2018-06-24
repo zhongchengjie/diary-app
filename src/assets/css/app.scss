@@ -1,0 +1,107 @@
+/* body css */
+body{font-family:"Helvetica, Arial, sans-serif,Helvetica Neue";}
+
+/* 导航条 css */
+.navbar.app-theme1{background: #4cd964}
+.navbar.app-theme2{background: #5ac8fa}
+.navbar .left a{color: #ffffff;margin-left:5px}
+.navbar .left i.iconfont{margin-left:-10px}
+.navbar .center{font-size: 18px;color: #ffffff;}
+.navbar .right a{color: #ffffff;}
+.navbar .right a+a{margin-left:0px}
+.navbar .right i.iconfont{font-size:24px;}
+
+/* 字体图标 css */
+i.iconfont.app-theme1{color:#4cd964}
+i.iconfont.app-theme2{color:#5ac8fa}
+li.app-theme1 .item-media i.iconfont{color:#4cd964}
+li.app-theme2 .item-media i.iconfont{color:#5ac8fa}
+
+.div-app-theme1{background: #4cd964}
+.div-app-theme2{background: #5ac8fa}
+
+/* 工具栏 css */
+.toolbar-inner .iconfont{font-size:24px}
+.toolbar-inner .tabbar-label{font-size:12px}
+.tabbar a.active.app-theme1{color:#4cd964}
+.tabbar a.active.app-theme2{color:#5ac8fa}
+
+/*  按钮 css */
+p.big-btn{width:80%;margin:10px auto}
+p.big-btn .button{letter-spacing: 2px;height:34px;line-height:32px;font-size:16px}
+
+/*  标签页按钮 css */
+.new-tab-btn.buttons-row{height:40px;padding-top:10px}
+.new-tab-btn.buttons-row .button{border:none;color:#555;letter-spacing: 2px}
+.new-tab-btn.buttons-row .button.active.app-theme1{background: none;color:#4cd964;border-radius:0px}
+.new-tab-btn.buttons-row .button.active.app-theme2{background: none;color:#5ac8fa;border-radius:0px}
+.new-tab-btn.buttons-row .button.active.app-theme1 span{padding:10px 10px 4px 10px;border-bottom:2px solid #4cd964;}
+.new-tab-btn.buttons-row .button.active.app-theme2 span{padding:10px 10px 4px 10px;border-bottom:2px solid #5ac8fa;}
+
+/*  文本框 css */
+.list-block .item-title.label {width:28%}
+.item-textarea textarea{height:120px}
+
+html.ios-gt-8 .navbar .center,html.ios-gt-8 .list-block.media-list .item-title{font-weight:500}
+
+/*  日历 */
+.calendar-page .page-content{}
+.calendar-page .picker-calendar-week-days{height:30px;}
+.calendar-page .picker-calendar-week-days .picker-calendar-week-day{line-height:30px;font-size:12px}
+
+/* popover */
+.popover{background: #333;width: 200px}
+.popover.modal-in{opacity:0.8}
+.popover .popover-angle:after{background:#333;}
+.popover .list-button{color:#fff;text-align:left;font-size:15px;padding-left:24px}
+
+/* pickModal */
+.picker-modal{background: #FFF;}
+.picker-modal .picker-modal-inner .list-block ul:before{display:none}
+.picker-modal .picker-modal-inner .list-block ul:after{display:none}
+.picker-modal .list-block .item-title.label{font-size:16px}
+.picker-modal .font-color-theme{display:flex;justify-content:space-between}
+.picker-modal .font-color-theme .color-box{width:36px;height:24px}
+.picker-modal .font-color-theme .bgc1{background:#333333;}
+.picker-modal .font-color-theme .bgc2{background:#5ac8fa;}
+.picker-modal .font-color-theme .bgc3{background:#4cd964;}
+.picker-modal .font-color-theme .bgc4{background:#8e8e93;}
+.picker-modal .font-color-theme .bgc5{background:#ff2d55;}
+
+/* timeline */
+.new-timeline .timeline-item-divider{width:16px;height:16px;}
+.new-timeline .timeline-item-content{width:100%}
+
+/* addMoments */
+.addMoments .item-textarea textarea{height:285px}
+.addMoments .toolbox{display:flex;justify-content:space-around;margin:2px auto}
+.addMoments .toolbox span i.iconfont{color:#5ac8fa;font-size:26px}
+	
+/* function-list */
+.function-list{margin-top:0px}
+.function-list .item-media i.iconfont{font-size:30px;}
+.function-list .item-subtitle{margin-top:6px}
+
+.theme-page .app-theme-box{display:flex;justify-content:space-between}
+.theme-page .app-theme-box .theme-box{width:40px;height:40px}
+.theme-page .app-theme1{background:#4cd964;}
+.theme-page .app-theme2{background:#5ac8fa;}
+.theme-page .app-theme3{background:#ffcc00;}
+.theme-page .app-theme4{background:#8e8e93;}
+.theme-page .app-theme5{background:#ff2d55;}
+
+
+/* 朋友圈动态列表 css*/
+.friend-moments-list{margin-top:40px}
+.friend-moments-list ul:before{display: none;}
+.friend-moments-list ul li{background:#fff;border-bottom:1px solid #EcEcEc;}
+.friend-moments-list ul li:first-child{border-top:none}
+.friend-moments-list .item-media{padding-top:0px}
+.friend-moments-list .item-media img{width:48px;height:48px;border-radius: 50%;}
+.friend-moments-list .item-inner:after{display: none;}
+.friend-moments-list .item-title{font-size:15px;color:#333}
+.friend-moments-list .item-text{font-size:14px;color:#555}
+.friend-moments-list .moments-photo{padding-left:80px;padding-right:20px;margin-bottom:10px;}
+.friend-moments-list .moments-time{padding-left:80px;font-size:12px;color:#666}
+.friend-moments-list .moments-comment{text-align: right;padding-right:20px}
+.friend-moments-list .moments-comment div.comments{background: #333;color:#fff;height:30px;line-height:28px;padding:2px 20px;padding-right:20px;border-radius:2px;display:inline-block!important;};

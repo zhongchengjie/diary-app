@@ -1,0 +1,33 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.example.template"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.example.template"
+        },
+        "cordova-plugin-sharesdk": {
+            "SHARESDK_ANDROID_APP_KEY": "xxxx",
+            "SHARESDK_IOS_APP_KEY": "xxxx",
+            "WECHAT_APP_ID": "xxxx",
+            "WECHAT_APP_SECRET": "xxxx",
+            "WEIBO_APP_ID": "xxxx",
+            "WEIBO_APP_SECRET": "xxxx",
+            "WEIBO_REDIRECT_URL": "http://xxxx",
+            "QQ_IOS_APP_ID": "xxxx",
+            "QQ_IOS_APP_HEX_ID": "xxxx",
+            "QQ_IOS_APP_KEY": "xxxx",
+            "QQ_ANDROID_APP_ID": "xxxx",
+            "QQ_ANDROID_APP_KEY": "xxxx",
+            "PACKAGE_NAME": "com.example.template"
+        }
+    },
+    "dependent_plugins": {}
+}

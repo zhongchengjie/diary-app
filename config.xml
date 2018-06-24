@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.example.template" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <hook src="hooks/hookers.js" type="before_prepare"/>
+    <hook src="hooks/beforedep.js" type="before_deploy"/>
+    <name>&#x65E5;&#x8BB0;</name>
+    <description>
+        Brand new cordova project!
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html"/>
+    <access origin="*"/>
+    <allow-intent href="http://*/*"/>
+    <allow-intent href="https://*/*"/>
+    <allow-intent href="tel:*"/>
+    <allow-intent href="sms:*"/>
+    <allow-intent href="mailto:*"/>
+    <allow-intent href="geo:*"/>
+    <platform name="android">
+        <allow-intent href="market:*"/>
+        <icon density="ldpi" src="platforms/android/res/android/ldpi.png"/>
+        <icon density="mdpi" src="platforms/android/res/android/mdpi.png"/>
+        <icon density="hdpi" src="platforms/android/res/android/hdpi.png"/>
+        <icon density="xhdpi" src="platforms/android/res/android/xhdpi.png"/>
+        <icon density="xxhdpi" src="platforms/android/res/android/xxhdpi.png"/>
+        <icon density="xxxhdpi" src="platforms/android/res/android/xxxhdpi.png"/>
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*"/>
+        <allow-intent href="itms-apps:*"/>
+    </platform>
+    <allow-navigation href="*"/>
+    <preference name="StatusBarOverlaysWebView" value="true"/>
+    <preference name="StatusBarBackgroundColor" value="#4cd964"/>
+    <engine name="android" spec="^5.0.0"/>
+    <engine name="browser" spec="^4.1.0"/>
+    <plugin name="cordova-plugin-sharesdk" spec="^0.1.0">
+        <variable name="SHARESDK_ANDROID_APP_KEY" value="xxxx"/>
+        <variable name="SHARESDK_IOS_APP_KEY" value="xxxx"/>
+        <variable name="WECHAT_APP_ID" value="xxxx"/>
+        <variable name="WECHAT_APP_SECRET" value="xxxx"/>
+        <variable name="WEIBO_APP_ID" value="xxxx"/>
+        <variable name="WEIBO_APP_SECRET" value="xxxx"/>
+        <variable name="WEIBO_REDIRECT_URL" value="http://xxxx"/>
+        <variable name="QQ_IOS_APP_ID" value="xxxx"/>
+        <variable name="QQ_IOS_APP_HEX_ID" value="xxxx"/>
+        <variable name="QQ_IOS_APP_KEY" value="xxxx"/>
+        <variable name="QQ_ANDROID_APP_ID" value="xxxx"/>
+        <variable name="QQ_ANDROID_APP_KEY" value="xxxx"/>
+    </plugin>
+    <plugin name="cordova-plugin-statusbar" spec="^2.2.3"/>
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.2"/>
+</widget>

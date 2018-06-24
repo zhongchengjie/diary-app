@@ -1,0 +1,135 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ShareSDK\"><param name=\"android-package\" value=\"behring.cordovasharesdk.ShareSDKPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.GET_TASKS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.MANAGE_ACCOUNTS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.BLUETOOTH_ADMIN\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:configChanges=\"keyboardHidden|orientation|screenSize\" android:name=\"com.mob.tools.MobUIShell\" android:screenOrientation=\"portrait\" android:theme=\"@android:style/Theme.Translucent.NoTitleBar\" android:windowSoftInputMode=\"stateHidden|adjustResize\"><intent-filter><action android:name=\"com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY\" /><category android:name=\"android.intent.category.DEFAULT\" /></intent-filter><intent-filter><data android:scheme=\"tencentxxxx\" /><action android:name=\"android.intent.action.VIEW\" /><category android:name=\"android.intent.category.BROWSABLE\" /><category android:name=\"android.intent.category.DEFAULT\" /></intent-filter></activity>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<activity android:configChanges=\"keyboardHidden|orientation|screenSize\" android:exported=\"true\" android:name=\".wxapi.WXEntryActivity\" android:screenOrientation=\"portrait\" android:theme=\"@android:style/Theme.Translucent.NoTitleBar\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.example.template"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.example.template"
+        },
+        "cordova-plugin-sharesdk": {
+            "SHARESDK_ANDROID_APP_KEY": "xxxx",
+            "SHARESDK_IOS_APP_KEY": "xxxx",
+            "WECHAT_APP_ID": "xxxx",
+            "WECHAT_APP_SECRET": "xxxx",
+            "WEIBO_APP_ID": "xxxx",
+            "WEIBO_APP_SECRET": "xxxx",
+            "WEIBO_REDIRECT_URL": "http://xxxx",
+            "QQ_IOS_APP_ID": "xxxx",
+            "QQ_IOS_APP_HEX_ID": "xxxx",
+            "QQ_IOS_APP_KEY": "xxxx",
+            "QQ_ANDROID_APP_ID": "xxxx",
+            "QQ_ANDROID_APP_KEY": "xxxx",
+            "PACKAGE_NAME": "com.example.template"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "id": "cordova-plugin-statusbar.statusbar",
+            "clobbers": [
+                "window.StatusBar"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-sharesdk/www/ShareSDK.js",
+            "id": "cordova-plugin-sharesdk.sharesdk",
+            "clobbers": [
+                "sharesdk"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-sharesdk/www/ShareSDKConstants.js",
+            "id": "cordova-plugin-sharesdk.ShareSDK",
+            "clobbers": [
+                "ShareSDK"
+            ]
+        }
+    ]
+}

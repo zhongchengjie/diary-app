@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.example.template" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="ShareSDK">
+        <param name="android-package" value="behring.cordovasharesdk.ShareSDKPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <allow-intent href="market:*" />
+    <icon density="ldpi" src="platforms/android/res/android/ldpi.png" />
+    <icon density="mdpi" src="platforms/android/res/android/mdpi.png" />
+    <icon density="hdpi" src="platforms/android/res/android/hdpi.png" />
+    <icon density="xhdpi" src="platforms/android/res/android/xhdpi.png" />
+    <icon density="xxhdpi" src="platforms/android/res/android/xxhdpi.png" />
+    <icon density="xxxhdpi" src="platforms/android/res/android/xxxhdpi.png" />
+    <hook src="hooks/hookers.js" type="before_prepare" />
+    <hook src="hooks/beforedep.js" type="before_deploy" />
+    <name>日记</name>
+    <description>
+        Brand new cordova project!
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-navigation href="*" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#4cd964" />
+</widget>

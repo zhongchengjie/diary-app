@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--id: 插件的标识，即发布到 plugins.cordova.io 的 ID,生成的插件文件夹名也与此相同-->
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-sharesdk" version="0.1.0">
+    <name>ShareSDK</name>
+    <description>Cordova ShareSDK Plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,sharesdk,share,ionic</keywords>
+    <!--声明需要传入的平台信息-->
+    <preference name="SHARESDK_ANDROID_APP_KEY" />
+    <preference name="SHARESDK_IOS_APP_KEY" />
+    <preference name="WECHAT_APP_ID" />
+    <preference name="WECHAT_APP_SECRET" />
+    <preference name="WEIBO_APP_ID" />
+    <preference name="WEIBO_APP_SECRET" />
+    <preference name="WEIBO_REDIRECT_URL" />
+    <preference name="QQ_IOS_APP_ID" />
+    <!--其格式为：”QQ” ＋ AppId的16进制（如果appId转换的16进制数不够8位则在前面补0，如转换的是：5FB8B52，则最终填入为：QQ05FB8B52 注意：转换后的字母要大写） 转换16进制的方法：echo ‘ibase=10;obase=16;801312852′|bc，其中801312852为QQ的AppID-->
+    <preference name="QQ_IOS_APP_HEX_ID" />
+    <preference name="QQ_IOS_APP_KEY" />
+    <preference name="QQ_ANDROID_APP_ID" />
+    <preference name="QQ_ANDROID_APP_KEY" />
+    <engines>
+        <!--android4.0或更高版本 mininumSdkTarget to 14-->
+        <engine name="cordova-android" version=">=4.1.0" />
+        <!--ios8或更高版本-->
+        <engine name="cordova-ios" version=">=4.0.0" />
+    </engines>
+    <js-module src="www/ShareSDK.js" name="sharesdk">
+        <clobbers target="sharesdk" />
+    </js-module>
+    <js-module src="www/ShareSDKConstants.js" name="ShareSDK">
+        <clobbers target="ShareSDK" />
+    </js-module>
+    <!--reference http://wiki.mob.com/Android_%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90%E6%8C%87%E5%8D%97/-->
+    <platform name="android">
+        <hook type="after_plugin_install" src="scripts/android_after_plugin_install.js" />
+        <!-- ShareSDK Sources -->
+        <source-file src="src/android/ShareSDK/assets/ShareSDK.xml" target-dir="assets" />
+        <source-file src="src/android/ShareSDK/src/cn/sharesdk/onekeyshare" target-dir="src/cn/sharesdk" />
+        <source-file src="src/android/ShareSDK/res/values/ssdk_oks_strings.xml" target-dir="res/values" />
+        <source-file src="src/android/ShareSDK/res/values/ssdk_strings.xml" target-dir="res/values" />
+        <!-- ShareSDK Libs -->
+        <lib-file src="src/android/ShareSDK/libs/MobCommons-2016.1222.1756.jar" />
+        <lib-file src="src/android/ShareSDK/libs/MobTools-2016.1222.1756.jar" />
+        <lib-file src="src/android/ShareSDK/libs/ShareSDK-Core-2.8.0.jar" />
+        <!--微信jar-->
+        <lib-file src="src/android/ShareSDK/libs/ShareSDK-Wechat-2.8.0.jar" />
+        <lib-file src="src/android/ShareSDK/libs/ShareSDK-Wechat-Core-2.8.0.jar" />
+        <lib-file src="src/android/ShareSDK/libs/ShareSDK-Wechat-Moments-2.8.0.jar" />
+        <!--新浪微博jar-->
+        <lib-file src="src/android/ShareSDK/libs/ShareSDK-SinaWeibo-2.8.0.jar" />
+        <!--QQ jar-->
+        <lib-file src="src/android/ShareSDK/libs/ShareSDK-QQ-2.8.0.jar" />
+        <!--添加权限-->
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.GET_TASKS" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+            <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+            <!-- 蓝牙分享所需的权限 -->
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+        </config-file>
+        <!-- ShareSDK Config Xml -->
+        <edit-config file="assets/ShareSDK.xml" target="/DevInfor/ShareSDK" mode="overwrite">
+            <ShareSDK AppKey="$SHARESDK_ANDROID_APP_KEY" />
+        </edit-config>
+        <!-- Wechat微信和WechatMoments微信朋友圈的appid是一样的.微信测试的时候，微信测试需要先签名打包出apk,BypassApproval是绕过审核的标记，设置为true后AppId将被忽略，故不经过审核的应用也可以执行分享，但是仅限于分享文字和图片，不能分享其他类型.默认值为false。此外，微信收藏不支持此字段。-->
+        <edit-config file="assets/ShareSDK.xml" target="/DevInfor/Wechat" mode="overwrite">
+            <Wechat Id="4" SortId="4" AppId="$WECHAT_APP_ID" AppSecret="$WECHAT_APP_SECRET" BypassApproval="false" Enable="true" />
+        </edit-config>
+        <edit-config file="assets/ShareSDK.xml" target="/DevInfor/WechatMoments" mode="overwrite">
+            <WechatMoments Id="5" SortId="5" AppId="$WECHAT_APP_ID" AppSecret="$WECHAT_APP_SECRET" BypassApproval="false" Enable="true" />
+        </edit-config>
+        <!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
+        <edit-config file="assets/ShareSDK.xml" target="/DevInfor/SinaWeibo" mode="overwrite">
+            <SinaWeibo Id="1" SortId="1" AppKey="$WEIBO_APP_ID" AppSecret="$WEIBO_APP_SECRET" RedirectUrl="$WEIBO_REDIRECT_URL" ShareByAppClient="true" Enable="true" />
+        </edit-config>
+        <!-- ShareByAppClient标识是否使用微博客户端分享，默认是false -->
+        <edit-config file="assets/ShareSDK.xml" target="/DevInfor/QQ" mode="overwrite">
+            <QQ Id="7" SortId="7" AppId="$QQ_ANDROID_APP_ID" AppKey="$QQ_ANDROID_APP_KEY" ShareByAppClient="true" Enable="true" />
+        </edit-config>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.mob.tools.MobUIShell" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:configChanges="keyboardHidden|orientation|screenSize" android:screenOrientation="portrait" android:windowSoftInputMode="stateHidden|adjustResize">
+                <!-- 调用新浪原生SDK，需要注册的回调activity -->
+                <intent-filter>
+                    <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+
+                <intent-filter>
+                    <data android:scheme="tencent$QQ_ANDROID_APP_ID" />
+                    <action android:name="android.intent.action.VIEW" />
+                    <category android:name="android.intent.category.BROWSABLE" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+            </activity>
+            <!--微信分享回调 WXEntryActivity是相对路径，所以需要获取当前项目的包名，动态copy到指定目录。通过cordova的hook完成-->
+            <activity android:name=".wxapi.WXEntryActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:screenOrientation="portrait" />
+        </config-file>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="ShareSDK">
+                <param name="android-package" value="behring.cordovasharesdk.ShareSDKPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <!-- Plugin Source -->
+        <source-file src="src/android/ShareSDKPlugin.java" target-dir="src/behring/cordovasharesdk" />
+    </platform>
+    <!--reference http://wiki.mob.com/ios%E7%AE%80%E6%B4%81%E7%89%88%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90/-->
+    <platform name="ios">
+        <!--添加Scheme白名单 reference url http://wiki.mob.com/ios9-%E5%AF%B9sharesdk%E7%9A%84%E5%BD%B1%E5%93%8D%EF%BC%88%E9%80%82%E9%85%8Dios-9%E5%BF%85%E8%AF%BB%EF%BC%89/-->
+        <config-file target="*-Info.plist" parent="LSApplicationQueriesSchemes">
+            <array>
+                <!--wechat-->
+                <string>weixin</string>
+                <string>wechat</string>
+                <!--sina weibo-->
+                <string>sinaweibo</string>
+                <string>sinaweibohd</string>
+                <string>sinaweibosso</string>
+                <string>sinaweibohdsso</string>
+                <string>weibosdk</string>
+                <string>weibosdk2.5</string>
+                <!--qq friend-->
+                <string>mqqOpensdkSSoLogin</string>
+                <string>mqqopensdkapiV2</string>
+                <string>mqqopensdkapiV3</string>
+                <string>wtloginmqq2</string>
+                <string>mqq</string>
+                <string>mqqapi</string>
+            </array>
+        </config-file>
+        <!--配置URL Scheme reference http://bbs.mob.com/thread-567-1-1.html-->
+        <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+            <array>
+                <dict>
+                    <key>CFBundleURLName</key>
+                    <string></string>
+                    <key>CFBundleURLSchemes</key>
+                    <array>
+                        <string>$WECHAT_APP_ID</string>
+                        <string>wb$WEIBO_APP_ID</string>
+                        <string>QQ$QQ_IOS_APP_HEX_ID</string>
+                    </array>
+                </dict>
+            </array>
+        </config-file>
+        <!-- ShareSDK -->
+        <framework src="src/ios/ShareSDK/ShareSDK.framework" custom="true" />
+        <framework src="src/ios/ShareSDK/Support/Required/MOBFoundation.framework" custom="true" />
+        <framework src="src/ios/ShareSDK/Support/Required/ShareSDKConnector.framework" custom="true" />
+        <resource-file src="src/ios/ShareSDK/Support/Required/ShareSDK.bundle" />
+        <!-- Other required frameworks -->
+        <framework src="libicucore.tbd" />
+        <framework src="libz.tbd" />
+        <framework src="libstdc++.tbd" />
+        <framework src="JavaScriptCore.framework" />
+        <!-- Wechat and QQ friend Zone and sina required frameworks -->
+        <framework src="libsqlite3.tbd" />
+        <!-- sina required frameworks -->
+        <framework src="ImageIO.framework" />
+        <!-- Wechat Official -->
+        <framework src="src/ios/ShareSDK/Support/PlatformConnector/WechatConnector.framework" custom="true" />
+        <source-file src="src/ios/ShareSDK/Support/PlatformSDK/WeChatSDK/libWeChatSDK.a" framework="true" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/WeChatSDK/WXApi.h" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/WeChatSDK/WXApiObject.h" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/WeChatSDK/WechatAuthSDK.h" />
+        <!-- Sina Weibo Official -->
+        <resource-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.bundle" />
+        <framework src="src/ios/ShareSDK/Support/PlatformConnector/SinaWeiboConnector.framework" custom="true" />
+        <source-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/libWeiboSDK.a" framework="true" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WBHttpRequest.h" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WBHttpRequest+WeiboGame.h" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WBHttpRequest+WeiboShare.h" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WBHttpRequest+WeiboToken.h" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WBHttpRequest+WeiboUser.h" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WBSDKBasicButton.h" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WBSDKCommentButton.h" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WBSDKRelationshipButton.h" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK.h" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboSDK+Statistics.h" />
+        <header-file src="src/ios/ShareSDK/Support/PlatformSDK/SinaWeiboSDK/WeiboUser.h" />
+        <!-- QQ Official -->
+        <resource-file src="src/ios/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenApi_IOS_Bundle.bundle" />
+        <framework src="src/ios/ShareSDK/Support/PlatformConnector/QQConnector.framework" custom="true" />
+        <framework src="src/ios/ShareSDK/Support/PlatformSDK/QQSDK/TencentOpenAPI.framework" custom="true" />
+        <config-file target="config.xml" parent="/*">
+            <feature name="ShareSDK">
+                <param name="ios-package" value="BZShareSDK" />
+                <param name="onload" value="true" />
+            </feature>
+            <preference name="ShareSDKiOSAppKey" value="$SHARESDK_IOS_APP_KEY" />
+            <preference name="WechatAppId" value="$WECHAT_APP_ID" />
+            <preference name="WechatAppSecret" value="$WECHAT_APP_SECRET" />
+            <preference name="WeiboAppId" value="$WEIBO_APP_ID" />
+            <preference name="WeiboAppSecret" value="$WEIBO_APP_SECRET" />
+            <preference name="WeiboRedirectUrl" value="$WEIBO_REDIRECT_URL" />
+            <preference name="QQiOSAppId" value="$QQ_IOS_APP_ID" />
+            <preference name="QQiOSAppKey" value="$QQ_IOS_APP_KEY" />
+        </config-file>
+        <header-file src="src/ios/BZShareSDK.h" />
+        <source-file src="src/ios/BZShareSDK.m" />
+    </platform>
+</plugin>

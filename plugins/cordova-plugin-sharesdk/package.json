@@ -1,0 +1,108 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-sharesdk",
+        "scope": null,
+        "escapedName": "cordova-plugin-sharesdk",
+        "name": "cordova-plugin-sharesdk",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\myWork\\WSProject\\diary-app\\node_modules"
+    ]
+  ],
+  "_from": "cordova-plugin-sharesdk@latest",
+  "_id": "cordova-plugin-sharesdk@0.1.0",
+  "_inCache": true,
+  "_location": "/cordova-plugin-sharesdk",
+  "_nodeVersion": "5.12.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-sharesdk-0.1.0.tgz_1486116719501_0.11139825731515884"
+  },
+  "_npmUser": {
+    "name": "behring.zhao",
+    "email": "zhaolin53636848@126.com"
+  },
+  "_npmVersion": "4.1.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-sharesdk",
+    "scope": null,
+    "escapedName": "cordova-plugin-sharesdk",
+    "name": "cordova-plugin-sharesdk",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-sharesdk/-/cordova-plugin-sharesdk-0.1.0.tgz",
+  "_shasum": "20c86995d1f79ac9926e73d484aca6ddafe664f4",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-sharesdk",
+  "_where": "D:\\myWork\\WSProject\\diary-app\\node_modules",
+  "author": {
+    "name": "behring.zhao"
+  },
+  "bugs": {
+    "url": "https://github.com/zhaolin0801/cordova-plugin-sharesdk/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-sharesdk",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "封装sharesdk,使hybird app能快速集成分享功能",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "20c86995d1f79ac9926e73d484aca6ddafe664f4",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-sharesdk/-/cordova-plugin-sharesdk-0.1.0.tgz"
+  },
+  "engines": [
+    {
+      "name": "cordova-android",
+      "version": ">=4.1.0"
+    },
+    {
+      "name": "cordova-ios",
+      "version": ">=4.0.0"
+    }
+  ],
+  "gitHead": "051b0ac543ee833698cba1f1ff4e4fbf931e45f3",
+  "homepage": "https://github.com/zhaolin0801/cordova-plugin-sharesdk#readme",
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "share",
+    "sharesdk",
+    "ionic",
+    "react"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "behring.zhao",
+      "email": "zhaolin53636848@126.com"
+    }
+  ],
+  "name": "cordova-plugin-sharesdk",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaolin0801/cordova-plugin-sharesdk.git"
+  },
+  "scripts": {},
+  "version": "0.1.0"
+}

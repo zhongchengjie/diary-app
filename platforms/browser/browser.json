@@ -1,0 +1,70 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.example.template"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.example.template"
+        },
+        "cordova-plugin-sharesdk": {
+            "SHARESDK_ANDROID_APP_KEY": "xxxx",
+            "SHARESDK_IOS_APP_KEY": "xxxx",
+            "WECHAT_APP_ID": "xxxx",
+            "WECHAT_APP_SECRET": "xxxx",
+            "WEIBO_APP_ID": "xxxx",
+            "WEIBO_APP_SECRET": "xxxx",
+            "WEIBO_REDIRECT_URL": "http://xxxx",
+            "QQ_IOS_APP_ID": "xxxx",
+            "QQ_IOS_APP_HEX_ID": "xxxx",
+            "QQ_IOS_APP_KEY": "xxxx",
+            "QQ_ANDROID_APP_ID": "xxxx",
+            "QQ_ANDROID_APP_KEY": "xxxx",
+            "PACKAGE_NAME": "com.example.template"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+            "id": "cordova-plugin-statusbar.statusbar",
+            "pluginId": "cordova-plugin-statusbar",
+            "clobbers": [
+                "window.StatusBar"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-statusbar/src/browser/StatusBarProxy.js",
+            "id": "cordova-plugin-statusbar.StatusBarProxy",
+            "pluginId": "cordova-plugin-statusbar",
+            "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-sharesdk/www/ShareSDK.js",
+            "id": "cordova-plugin-sharesdk.sharesdk",
+            "pluginId": "cordova-plugin-sharesdk",
+            "clobbers": [
+                "sharesdk"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-sharesdk/www/ShareSDKConstants.js",
+            "id": "cordova-plugin-sharesdk.ShareSDK",
+            "pluginId": "cordova-plugin-sharesdk",
+            "clobbers": [
+                "ShareSDK"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-whitelist": "1.3.2",
+        "cordova-plugin-statusbar": "2.2.3",
+        "cordova-plugin-sharesdk": "0.1.0"
+    }
+}
