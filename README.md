@@ -1,6 +1,8 @@
 ## diary-app
 日记app
-vue2 WebApp
+
+A WebApp by vue2
+
 **A cordova project with framework7 - vue - webpack**
 
 #### Build Setup
