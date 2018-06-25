@@ -1,7 +1,5 @@
 ## diary-app
-日记app
-
-A WebApp by vue2
+日记app, a webApp by **vue2**
 
 **A cordova project with framework7 - vue - webpack**
 
@@ -19,3 +17,4 @@ cordova run browser -- --lr
 
 # build for production
 cordova build android
+```
