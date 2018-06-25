@@ -7,6 +7,7 @@
 ![image](https://raw.githubusercontent.com/zhongchengjie/diary-app/master/demo/page2.png)
 ![image](https://raw.githubusercontent.com/zhongchengjie/diary-app/master/demo/page3.png)
 ![image](https://raw.githubusercontent.com/zhongchengjie/diary-app/master/demo/page4.png)
+![image](https://raw.githubusercontent.com/zhongchengjie/diary-app/master/demo/page5.png)
 
 #### Build Setup
 
