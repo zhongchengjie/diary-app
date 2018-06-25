@@ -3,7 +3,7 @@
 
 **A cordova project with framework7 - vue - webpack**
 
-![image](http://github.com/zhongchengjie/diary-app/raw/master/src/static/assets/images/user_photo.jpg)
+![image](http://github.com/zhongchengjie/diary-app/raw/master/static/assets/images/user_photo.jpg)
 
 #### Build Setup
 
