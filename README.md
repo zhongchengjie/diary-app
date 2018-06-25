@@ -3,10 +3,10 @@
 
 **A cordova project with framework7 - vue - webpack**
 
-![image](https://raw.githubusercontent.com/zhongchengjie/diary-app/master/demo/page1.jpg)
-![image](https://raw.githubusercontent.com/zhongchengjie/diary-app/master/demo/page2.jpg)
-![image](https://raw.githubusercontent.com/zhongchengjie/diary-app/master/demo/page3.jpg)
-![image](https://raw.githubusercontent.com/zhongchengjie/diary-app/master/demo/page4.jpg)
+![image](https://raw.githubusercontent.com/zhongchengjie/diary-app/master/demo/page1.png)
+![image](https://raw.githubusercontent.com/zhongchengjie/diary-app/master/demo/page2.png)
+![image](https://raw.githubusercontent.com/zhongchengjie/diary-app/master/demo/page3.png)
+![image](https://raw.githubusercontent.com/zhongchengjie/diary-app/master/demo/page4.png)
 
 #### Build Setup
 
