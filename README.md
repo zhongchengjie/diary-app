@@ -1,9 +1,9 @@
 # diary-app
 日记app
 
-> A cordova project with framework7 - vue - webpack
+> ** A cordova project with framework7 - vue - webpack **
 
-## Build Setup
+### Build Setup
 
 ``` bash
 # install dependencies
